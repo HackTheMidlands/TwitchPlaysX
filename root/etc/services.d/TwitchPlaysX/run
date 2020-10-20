@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+cd /opt/TwitchPlaysX && npm run start
