@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /usr/bin/xterm
+exec /usr/bin/vba -F
