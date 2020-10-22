@@ -2,7 +2,7 @@
 FROM jlesage/baseimage-gui:ubuntu-18.04-v3
 
 # Install xterm.
-RUN add-pkg xterm xdotool nodejs
+RUN add-pkg xterm xdotool nodejs visualboyadvance
 
 # Copy the start script.
 COPY startapp.sh /startapp.sh
