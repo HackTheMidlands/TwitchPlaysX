@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   vba:
+    image: ghcr.io/chasbob/twitch-plays-x:visualboyadvance
     build: .
     volumes:
       - "./roms:/roms"

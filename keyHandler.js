@@ -71,7 +71,7 @@ async function sendKey(command) {
       if (isWindows) {
         exec("python key.py" + "  " + config.programName + " " + key);
       } else {
-        for (var i = 0; i < count + 1; i++) {
+        for (var i = 0; i < count; i++) {
           console.log(i, key, count);
           //Send to preset window under non-windows systems
           exec(
