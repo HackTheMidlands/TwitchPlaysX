@@ -14,7 +14,7 @@ const client = new tmi.client({
 
 const commandRegex =
   config.regexCommands ||
-  new RegExp("^(" + config.commands.join("|") + ")$", "i");
+  new RegExp("^(" + config.commands.join("|") + ")( [0-5])?$", "i");
 
 client.on("message", function (channel, tags, message, self) {
   let isCorrectChannel = `#${config.channel}` === channel;
@@ -38,9 +38,11 @@ client.addListener("disconnected", function (reason) {
 });
 
 client.connect();
-if (config.channel === 'twitchplayspokemon') {
+if (config.channel === "twitchplayspokemon") {
   console.log("");
-  console.log("'twitchplayspokemon' is the default channel! Otherwise, run with the environment variable: ");
+  console.log(
+    "'twitchplayspokemon' is the default channel! Otherwise, run with the environment variable: "
+  );
   console.log("TWITCH_CHANNEL=mychannelhere npm start");
   console.log("");
 }
