@@ -1,8 +1,7 @@
 // change these two variables
 let channel = process.env.TWITCH_CHANNEL || "twitchplayspokemon";
-let programName =
-  process.env.CONFIG_PROGRAM_NAME || "VisualBoyAdvance";
-  
+let programName = process.env.CONFIG_PROGRAM_NAME || "VisualBoyAdvance";
+
 // List of commands to check for
 let commands = [
   "left",
@@ -43,5 +42,5 @@ module.exports = {
 
   // Delay between each possible keypress in milliseconds (can't be too fast)
   // To change on Windows, change `key.py`
-  delay: 100,
+  delay: 500,
 };
