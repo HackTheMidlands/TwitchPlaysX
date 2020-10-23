@@ -12,7 +12,7 @@ RUN apt update \
   ca-certificates \
   tar \
   wget \
-# -- from builddeps script
+  # -- from builddeps script
   build-essential \
   g++ \
   nasm \
@@ -44,11 +44,11 @@ RUN apt update \
   libgtk2.0-dev \
   libgtk-3-dev \
   zip \
-# sound driver to play sound on host
+  # sound driver to play sound on host
   pulseaudio \
-# su command
+  # su command
   gosu \
-# build
+  # build
   && mkdir /vbam-build && cd /vbam-build \
   && wget -O vbam.tar.gz https://github.com/visualboyadvance-m/visualboyadvance-m/archive/v${VERSION}.tar.gz \
   && echo "${SHA1HASH} vbam.tar.gz" | sha1sum -c - \
@@ -57,9 +57,9 @@ RUN apt update \
   && mkdir build && cd build \
   && cmake ../src \
   && make -j$(nproc) \
-# copy to /usr/local/bin/
+  # copy to /usr/local/bin/
   && mv visualboyadvance-m /usr/local/bin/ \
-# remove build environment
+  # remove build environment
   && rm -r /vbam-build/
 
 
@@ -82,3 +82,8 @@ RUN npm install
 COPY . ./
 
 RUN useradd -m bot
+
+ENV TWITCH_CHANNEL=htm_live
+ENV CONFIG_PROGRAM_NAME=VisualBoyAdvance
+ENV USER_ID=0
+ENV GROUP_ID=0
