@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  vba:
+    build: .
+    volumes:
+      - "./roms:/roms"
+    ports:
+      - "5900:5900"
+      - "5800:5800"
