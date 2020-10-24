@@ -49,6 +49,7 @@ function sleep(ms) {
 }
 
 async function sendKey(command) {
+  console.log("sendKey", command);
   //if doesn't match the filtered words
   if (!command.match(regexFilter)) {
     console.log(command);
@@ -71,16 +72,25 @@ async function sendKey(command) {
       if (isWindows) {
         exec("python key.py" + "  " + config.programName + " " + key);
       } else {
-          console.log(i, key, count);
-          //Send to preset window under non-windows systems
-          exec(
-            "xdotool key --window " +
-              windowID +
-              " --delay " +
-              config.delay +
-              " " +
-              key
-          );
+        console.log(key, count);
+        let cmd =
+          "xdotool windowfocus --sync $(xdotool search --name --onlyvisible " +
+          config.programName +
+          ") " +
+          "key --window $(xdotool search --name --onlyvisible " +
+          config.programName +
+          ")" +
+          " --delay " +
+          config.delay +
+          " " +
+          key;
+        //Send to preset window under non-windows systems
+        console.log(cmd);
+        let i;
+        for(i = 0; i < count; i++){
+          exec(cmd);
+          await sleep(500);
+        }
       }
     }
   }
