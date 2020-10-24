@@ -40,8 +40,8 @@ let defaultKeyMap = config.keymap || {
   b: "k",
   x: "x",
   y: "y",
-  start: "s",
-  select: "e",
+  start: "j",
+  select: "h",
 };
 
 function sleep(ms) {
