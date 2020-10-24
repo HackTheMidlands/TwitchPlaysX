@@ -42,5 +42,5 @@ module.exports = {
 
   // Delay between each possible keypress in milliseconds (can't be too fast)
   // To change on Windows, change `key.py`
-  delay: 500,
+  delay: 100,
 };
