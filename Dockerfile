@@ -83,7 +83,3 @@ COPY . ./
 
 RUN useradd -m bot
 
-ENV TWITCH_CHANNEL=chasbob
-ENV CONFIG_PROGRAM_NAME=VisualBoyAdvance
-ENV USER_ID=0
-ENV GROUP_ID=0
