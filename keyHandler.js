@@ -40,8 +40,8 @@ let defaultKeyMap = config.keymap || {
   b: "k",
   x: "x",
   y: "y",
-  start: "j",
-  select: "h",
+  start: "KP_Enter",
+  select: "BackSpace",
 };
 
 function sleep(ms) {
