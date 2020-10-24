@@ -9,3 +9,8 @@ services:
     ports:
       - "5900:5900"
       - "5800:5800"
+    environment:
+      TWITCH_CHANNEL: htm_live
+      CONFIG_PROGRAM_NAME: VisualBoyAdvance
+      USER_ID: 0
+      GROUP_ID: 0
