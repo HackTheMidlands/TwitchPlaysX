@@ -40,7 +40,7 @@ let defaultKeyMap = config.keymap || {
   b: "k",
   x: "x",
   y: "y",
-  start: "KP_Enter",
+  start: "p",
   select: "BackSpace",
 };
 
